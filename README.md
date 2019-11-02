@@ -3,9 +3,7 @@ dictionary-js
 
 Command line dictionary tool
 
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/dictionary-js.svg)](https://npmjs.org/package/dictionary-js)
-[![Downloads/week](https://img.shields.io/npm/dw/dictionary-js.svg)](https://npmjs.org/package/dictionary-js)
 [![License](https://img.shields.io/npm/l/dictionary-js.svg)](https://github.com/AsmaMubeen/dictionary-js/blob/master/package.json)
 
 <!-- toc -->
@@ -28,26 +26,8 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`dict hello`](#dict-hello)
 * [`dict help [COMMAND]`](#dict-help-command)
-
-## `dict hello`
-
-Describe the command here
-
-```
-USAGE
-  $ dict hello
-
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
-```
-
-_See code: [src\commands\hello.js](https://github.com/AsmaMubeen/dictionary-js/blob/v0.0.0/src\commands\hello.js)_
+* [`dict syn`](#dict-syn)
 
 ## `dict help [COMMAND]`
 
@@ -65,4 +45,18 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.1/src\commands\help.ts)_
+
+## `dict syn`
+
+Shows synonyms of the given word
+
+```
+USAGE
+  $ dict syn WORD
+
+ARGUMENTS
+  WORD  A word for which you want the synonyms
+```
+
+_See code: [src\commands\syn.js](https://github.com/AsmaMubeen/dictionary-js/blob/v0.0.0/src\commands\syn.js)_
 <!-- commandsstop -->
