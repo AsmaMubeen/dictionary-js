@@ -1,4 +1,7 @@
 const {Command, flags} = require('@oclif/command')
+const FortyTwoWordsService = require('../services/forty-two-words-service')
+const cli = require('cli-ux').cli
+const chalk = require('chalk')
 
 class PlayCommand extends Command {
   async run() {

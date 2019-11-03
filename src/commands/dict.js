@@ -1,9 +1,9 @@
 const { Command, flags } = require('@oclif/command')
-const FortyTwoWordsService = require('../services/forty-two-words-service')
-const cli = require('cli-ux').cli
+const DictionaryService = require('../services/dictionary-service')
 const chalk = require('chalk')
 
 class DictCommand extends Command {
+
   static args = [
     {
       name: 'word',
@@ -13,47 +13,52 @@ class DictCommand extends Command {
     }
   ];
 
+
   async run() {
     const { argv } = this.parse(DictCommand);
-    let service = new FortyTwoWordsService();
-    let { data: definitionsResp } = await service.definitions(argv[0])
-    if (definitionsResp.error) {
-      console.log(chalk.red(definitionsResp.error))
-    }
-    else {
-      let { data: relatedWordsResp } = await service.relatedWords(argv[0])
-      let synonyms = relatedWordsResp.filter(x => x.relationshipType == 'synonym')[0] ? relatedWordsResp.filter(x => x.relationshipType == 'synonym')[0].words : []
-      let antonyms = relatedWordsResp.filter(x => x.relationshipType == 'antonym')[0] ? relatedWordsResp.filter(x => x.relationshipType == 'antonym')[0].words : []
-      let { data: examplesResp } = await service.examples(argv[0])
 
-      let regex = /_/gi;
+    let word = argv[0]
 
-      console.log(chalk.green('definitions'.toUpperCase()))
-      for (let definition of definitionsResp) {
-        console.log(definition.text)
+    let dictionaryService = new DictionaryService();
+
+
+    let wordExists = await dictionaryService.wordExists(word)
+
+    if (wordExists) {
+      let definitions = await dictionaryService.definitions(word)
+      if (definitions) {
+        console.log(chalk.green('definitions'.toUpperCase()))
+        for (let definition of definitions) {
+          console.log(definition)
+        }
+        console.log()
       }
 
-      if (synonyms.length) {
-        console.log()
+      let synonyms = await dictionaryService.synonyms(word)
+      if (synonyms) {
         console.log(chalk.green('synonyms'.toUpperCase()))
         for (let synonym of synonyms) {
           console.log(synonym)
         }
+        console.log()
       }
 
-      if (antonyms.length) {
-        console.log()
+      let antonyms = await dictionaryService.antonyms(word)
+      if (antonyms) {
         console.log(chalk.green('antonyms'.toUpperCase()))
         for (let antonym of antonyms) {
           console.log(antonym)
         }
+        console.log()
       }
 
-      console.log()
-      console.log(chalk.green('examples'.toUpperCase()))
-      for (let example of examplesResp.examples) {
-        console.log(example.text.replace(regex, ''))
-        console.log()
+      let examples = await dictionaryService.examples(word)
+      if (examples) {
+        console.log(chalk.green('examples'.toUpperCase()))
+        for (let example of examples) {
+          console.log(example)
+          console.log()
+        }
       }
     }
   }

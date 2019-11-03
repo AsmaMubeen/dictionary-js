@@ -1,7 +1,6 @@
 const { Command, flags } = require('@oclif/command')
-const FortyTwoWordsService = require('../services/forty-two-words-service')
-const cli = require('cli-ux').cli
 const chalk = require('chalk')
+const DictionaryService = require('../services/dictionary-service')
 
 class AntCommand extends Command {
   static args = [
@@ -15,24 +14,15 @@ class AntCommand extends Command {
 
   async run() {
     const { argv } = this.parse(AntCommand);
-    let service = new FortyTwoWordsService();
-    let { data: resp } = await service.relatedWords(argv[0])
-    if (resp.error) {
-      console.log(chalk.red(resp.error))
-    } else {
-      let antonyms = resp.filter(x => x.relationshipType == 'antonym')[0]
-      if(antonyms) {
-        cli.table(antonyms.words, {
-          antonyms: {
-            get: row => row
-          }
-        })
-      }
-      else {
-        console.log('antonyms not found for the given word')
+    let service = new DictionaryService();
+
+    let antonyms = await service.antonyms(argv[0])
+    if(antonyms) {
+      console.log(chalk.green('antonyms'.toUpperCase()))
+      for (let antonym of antonyms) {
+        console.log(antonym)
       }
     }
-
   }
 }
 

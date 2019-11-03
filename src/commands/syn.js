@@ -1,7 +1,6 @@
 const { Command, flags } = require('@oclif/command')
-const FortyTwoWordsService = require('../services/forty-two-words-service')
-const cli = require('cli-ux').cli
 const chalk = require('chalk')
+const DictionaryService = require('../services/dictionary-service')
 
 class SynCommand extends Command {
   static args = [
@@ -15,18 +14,14 @@ class SynCommand extends Command {
 
   async run() {
     const { argv } = this.parse(SynCommand);
-    let service = new FortyTwoWordsService();
-    let { data: resp } = await service.relatedWords(argv[0])
-    
-    if (resp.error) {
-      console.log(chalk.red(resp.error))
-    } else {
-      let synonyms = resp.filter(x => x.relationshipType == 'synonym')[0]
-      cli.table(synonyms.words, {
-        synonyms: {
-          get: row => row
-        }
-      })
+    let service = new DictionaryService();
+
+    let synonyms = await service.synonyms(argv[0])
+    if(synonyms) {
+      console.log(chalk.green('synonyms'.toUpperCase()))
+      for (let synonym of synonyms) {
+        console.log(synonym)
+      }
     }
   }
 }

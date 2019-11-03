@@ -1,7 +1,7 @@
 const { Command, flags } = require('@oclif/command')
-const FortyTwoWordsService = require('../services/forty-two-words-service')
-const cli = require('cli-ux').cli
 const chalk = require('chalk')
+const DictionaryService = require('../services/dictionary-service')
+
 
 class DefCommand extends Command {
   static args = [
@@ -15,17 +15,14 @@ class DefCommand extends Command {
 
   async run() {
     const { argv } = this.parse(DefCommand);
-    let service = new FortyTwoWordsService();
-    let { data: resp } = await service.definitions(argv[0])
+    let service = new DictionaryService();
 
-    if (resp.error) {
-      console.log(chalk.red(resp.error))
-    } else {
-      cli.table(resp, {
-        definitions: {
-          get: row => row.text
-        }
-      })
+    let definitions = await service.definitions(argv[0])
+    if(definitions) {
+      console.log(chalk.green('definitions'.toUpperCase()))
+      for (let definition of definitions) {
+        console.log(definition)
+      }
     }
 
   }

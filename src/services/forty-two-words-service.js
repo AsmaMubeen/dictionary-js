@@ -1,6 +1,7 @@
 const config = require('../../config')
 const axios = require('axios')
 
+
 class FortyTwoWordsService {
     async randomWord() {
         return await this.get(`/words/randomWord`);

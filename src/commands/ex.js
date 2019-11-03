@@ -1,7 +1,6 @@
 const { Command, flags } = require('@oclif/command')
-const FortyTwoWordsService = require('../services/forty-two-words-service')
-const cli = require('cli-ux').cli
 const chalk = require('chalk')
+const DictionaryService = require('../services/dictionary-service')
 
 class ExCommand extends Command {
   static args = [
@@ -15,18 +14,17 @@ class ExCommand extends Command {
 
   async run() {
     const { argv } = this.parse(ExCommand);
-    let service = new FortyTwoWordsService();
-    let { data: resp } = await service.examples(argv[0])
-    let regex = /_/gi;
-    if (resp.error) {
-      console.log(chalk.red(resp.error))
-    } else {
-      console.log(chalk.yellow('examples'.toUpperCase()))
-      for (let example of resp.examples) {
-        console.log(example.text.replace(regex, ''))
+    let service = new DictionaryService();
+
+    let examples = await service.examples(argv[0])
+    if (examples) {
+      console.log(chalk.green('examples'.toUpperCase()))
+      for (let example of examples) {
+        console.log(example)
         console.log()
       }
     }
+
   }
 }
 
