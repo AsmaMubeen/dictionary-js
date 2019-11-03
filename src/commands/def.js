@@ -1,6 +1,7 @@
-const {Command, flags} = require('@oclif/command')
+const { Command, flags } = require('@oclif/command')
 const FortyTwoWordsService = require('../services/forty-two-words-service')
 const cli = require('cli-ux').cli
+const chalk = require('chalk')
 
 class DefCommand extends Command {
   static args = [
@@ -16,11 +17,17 @@ class DefCommand extends Command {
     const { argv } = this.parse(DefCommand);
     let service = new FortyTwoWordsService();
     let { data: resp } = await service.definitions(argv[0])
-    cli.table(resp, {
-      definitions: {
-        get: row => row.text
-      }
-    })
+
+    if (resp.error) {
+      console.log(chalk.red(resp.error))
+    } else {
+      cli.table(resp, {
+        definitions: {
+          get: row => row.text
+        }
+      })
+    }
+
   }
 }
 

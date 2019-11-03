@@ -19,11 +19,17 @@ class FortyTwoWordsService {
     }
 
     async get(apiPath) {
-        return await axios.get(config.apiHost + apiPath, {
-            params: {
-                api_key: config.apiKey
-            }
-        });
+        try {
+            let response = await axios.get(config.apiHost + apiPath, {
+                params: {
+                    api_key: config.apiKey
+                }
+            });
+            return response
+        }
+        catch(error) {
+            return error.response
+        }
     }
 }
 

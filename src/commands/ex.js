@@ -18,10 +18,14 @@ class ExCommand extends Command {
     let service = new FortyTwoWordsService();
     let { data: resp } = await service.examples(argv[0])
     let regex = /_/gi;
-    console.log(chalk.yellow('examples'.toUpperCase()))
-    for (let example of resp.examples) {
-      console.log(example.text.replace(regex, ''))
-      console.log()
+    if (resp.error) {
+      console.log(chalk.red(resp.error))
+    } else {
+      console.log(chalk.yellow('examples'.toUpperCase()))
+      for (let example of resp.examples) {
+        console.log(example.text.replace(regex, ''))
+        console.log()
+      }
     }
   }
 }
