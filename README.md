@@ -36,18 +36,14 @@ USAGE
 
 ## `dict ant`
 
-Describe the command here
+Shows antonyms of the given word
 
 ```
 USAGE
-  $ dict ant
+  $ dict ant WORD
 
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
+ARGUMENTS
+  WORD  A word for which you want the antonyms
 ```
 
 _See code: [src\commands\ant.js](https://github.com/AsmaMubeen/dictionary-js/blob/v0.0.0/src\commands\ant.js)_

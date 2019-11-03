@@ -1,20 +1,31 @@
 const {Command, flags} = require('@oclif/command')
+const FortyTwoWordsService = require('../services/forty-two-words-service')
+const cli = require('cli-ux').cli
 
 class AntCommand extends Command {
+  static args = [
+    {
+      name: 'word',
+      required: true,
+      description: 'A word for which you want the antonyms',
+      hidden: false,
+    }
+  ]
+
   async run() {
-    const {flags} = this.parse(AntCommand)
-    const name = flags.name || 'world'
-    this.log(`hello ${name} from C:\\Users\\asmam\\Documents\\Automate.io Task\\dictionary-js\\src\\commands\\ant.js`)
+    const { argv } = this.parse(AntCommand);
+    let service = new FortyTwoWordsService();
+    let { data: resp } = await service.relatedWords(argv[0])
+    let antonyms = resp.filter(x => x.relationshipType == 'antonym')[0]
+    cli.table(antonyms.words, {
+      antonyms: {
+        get: row => row
+      }
+    })
   }
 }
 
-AntCommand.description = `Describe the command here
-...
-Extra documentation goes here
-`
+AntCommand.description = `Shows antonyms of the given word`
 
-AntCommand.flags = {
-  name: flags.string({char: 'n', description: 'name to print'}),
-}
 
 module.exports = AntCommand
