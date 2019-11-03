@@ -1,7 +1,7 @@
 {
   "name": "dictionary-cli-tool",
   "description": "Command line dictionary tool",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "asma mubeen",
   "bin": {
     "dict": "./bin/run"
@@ -52,7 +52,6 @@
     "posttest": "eslint .",
     "prepack": "oclif-dev manifest && oclif-dev readme",
     "test": "echo NO TESTS",
-    "version": "oclif-dev readme && git add README.md",
-    "postinstall": "npm link"
+    "version": "oclif-dev readme && git add README.md"
   }
 }

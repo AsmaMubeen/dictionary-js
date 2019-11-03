@@ -24,6 +24,10 @@ USAGE
 ...
 ```
 <!-- usagestop -->
+# Installing through source code
+* git clone
+* npm i
+* npm link
 # Commands
 <!-- commands -->
 * [`dict ant WORD`](#dict-ant-word)
