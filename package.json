@@ -1,7 +1,7 @@
 {
   "name": "dictionary-cli-tool",
   "description": "Command line dictionary tool",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "asma mubeen",
   "bin": {
     "dict": "./bin/run"

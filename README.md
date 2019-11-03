@@ -17,7 +17,7 @@ $ npm install -g dictionary-cli-tool
 $ dict COMMAND
 running command...
 $ dict (-v|--version|version)
-dictionary-cli-tool/1.0.0 win32-x64 node-v12.13.0
+dictionary-cli-tool/1.0.1 win32-x64 node-v12.13.0
 $ dict --help [COMMAND]
 USAGE
   $ dict COMMAND
