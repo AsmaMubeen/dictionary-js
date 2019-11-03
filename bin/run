@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var commands = ["ant", "def", "dict", "ex", "play", "syn", "word-of-day", "help", "--help"];
+var commands = ["ant", "def", "dict", "ex", "play", "syn", "word-of-day", "help", "--help", "-v", "--version", "version"];
 
 if (process.argv.length == 2) {
     process.argv.push("word-of-day");
