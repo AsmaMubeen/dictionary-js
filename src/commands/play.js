@@ -3,6 +3,7 @@ const chalk = require('chalk')
 const DictionaryService = require('../services/dictionary-service')
 const cli = require('cli-ux').cli
 const inquirer = require('inquirer')
+const dict = require('./dict')
 
 class PlayCommand extends Command {
 
@@ -10,7 +11,7 @@ class PlayCommand extends Command {
     let dictionaryService = new DictionaryService();
 
     let word = await dictionaryService.randomWord();
-    console.log('word - ', word)
+    
     let definitions = await dictionaryService.definitions(word)
     let relatedWords = await dictionaryService.getSynonymsAndAntonyms(word)
     let synonyms = relatedWords.synonyms
@@ -85,6 +86,8 @@ class PlayCommand extends Command {
           await this.ask(word, synonyms, randomChoice)
           break;
         case '3. quit':
+          console.log(chalk.yellow('Word is ', chalk.blue(word), '\n'))
+          await dict.run([word])
           break;
 
         default:
