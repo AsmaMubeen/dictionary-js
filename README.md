@@ -3,7 +3,7 @@ dictionary-js
 
 Command line dictionary tool
 
-[![Version](https://img.shields.io/npm/v/dictionary-js.svg)](https://npmjs.org/package/dictionary-js)
+[![Version](https://img.shields.io/npm/v/dictionary-cli-tool.svg)](https://npmjs.org/package/dictionary-cli-tool)
 [![License](https://img.shields.io/npm/l/dictionary-js.svg)](https://github.com/AsmaMubeen/dictionary-js/blob/master/package.json)
 
 <!-- toc -->
