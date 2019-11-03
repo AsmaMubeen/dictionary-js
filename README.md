@@ -82,18 +82,14 @@ _See code: [src\commands\dict.js](https://github.com/AsmaMubeen/dictionary-js/bl
 
 ## `dict ex`
 
-Describe the command here
+Shows examples of the given word
 
 ```
 USAGE
-  $ dict ex
+  $ dict ex WORD
 
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
+ARGUMENTS
+  WORD  A word for which you want the examples
 ```
 
 _See code: [src\commands\ex.js](https://github.com/AsmaMubeen/dictionary-js/blob/v0.0.0/src\commands\ex.js)_

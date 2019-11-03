@@ -1,20 +1,31 @@
-const {Command, flags} = require('@oclif/command')
+const { Command, flags } = require('@oclif/command')
+const FortyTwoWordsService = require('../services/forty-two-words-service')
+const cli = require('cli-ux').cli
+const chalk = require('chalk')
 
 class ExCommand extends Command {
+  static args = [
+    {
+      name: 'word',
+      required: true,
+      description: 'A word for which you want the examples',
+      hidden: false,
+    }
+  ];
+
   async run() {
-    const {flags} = this.parse(ExCommand)
-    const name = flags.name || 'world'
-    this.log(`hello ${name} from C:\\Users\\asmam\\Documents\\Automate.io Task\\dictionary-js\\src\\commands\\ex.js`)
+    const { argv } = this.parse(ExCommand);
+    let service = new FortyTwoWordsService();
+    let { data: resp } = await service.examples(argv[0])
+    let regex = /_/gi;
+    console.log(chalk.yellow('examples'.toUpperCase()))
+    for (let example of resp.examples) {
+      console.log(example.text.replace(regex, ''))
+      console.log()
+    }
   }
 }
 
-ExCommand.description = `Describe the command here
-...
-Extra documentation goes here
-`
-
-ExCommand.flags = {
-  name: flags.string({char: 'n', description: 'name to print'}),
-}
+ExCommand.description = `Shows examples of the given word`
 
 module.exports = ExCommand
