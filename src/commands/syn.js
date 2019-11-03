@@ -17,7 +17,7 @@ class SynCommand extends Command {
     let service = new DictionaryService();
 
     let synonyms = await service.synonyms(argv[0])
-    if(synonyms) {
+    if (synonyms) {
       console.log(chalk.green('synonyms'.toUpperCase()))
       for (let synonym of synonyms) {
         console.log(synonym)

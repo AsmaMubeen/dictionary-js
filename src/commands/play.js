@@ -11,7 +11,7 @@ class PlayCommand extends Command {
     let dictionaryService = new DictionaryService();
 
     let word = await dictionaryService.randomWord();
-    
+
     let definitions = await dictionaryService.definitions(word)
     let relatedWords = await dictionaryService.getSynonymsAndAntonyms(word)
     let synonyms = relatedWords.synonyms

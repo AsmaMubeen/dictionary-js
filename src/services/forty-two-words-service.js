@@ -28,7 +28,7 @@ class FortyTwoWordsService {
             });
             return response
         }
-        catch(error) {
+        catch (error) {
             return error.response
         }
     }

@@ -9,7 +9,7 @@ class WordOfDayCommand extends Command {
 
     let word = await dictionaryService.randomWord();
     console.log(chalk.blue('Word of the day: ', word, '\n'))
-    
+
     await dict.run([word])
   }
 }

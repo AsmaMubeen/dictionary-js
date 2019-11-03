@@ -18,7 +18,7 @@ class DefCommand extends Command {
     let service = new DictionaryService();
 
     let definitions = await service.definitions(argv[0])
-    if(definitions) {
+    if (definitions) {
       console.log(chalk.green('definitions'.toUpperCase()))
       for (let definition of definitions) {
         console.log(definition)

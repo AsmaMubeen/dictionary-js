@@ -17,7 +17,7 @@ class AntCommand extends Command {
     let service = new DictionaryService();
 
     let antonyms = await service.antonyms(argv[0])
-    if(antonyms) {
+    if (antonyms) {
       console.log(chalk.green('antonyms'.toUpperCase()))
       for (let antonym of antonyms) {
         console.log(antonym)

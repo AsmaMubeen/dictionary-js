@@ -135,18 +135,12 @@ _See code: [src\commands\syn.js](https://github.com/AsmaMubeen/dictionary-js/blo
 
 ## `dict word-of-day`
 
-Describe the command here
+Displays all available details of the Word Of The Day
 
 ```
 USAGE
   $ dict word-of-day
 
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
 ```
 
 _See code: [src\commands\word-of-day.js](https://github.com/AsmaMubeen/dictionary-js/blob/v0.0.0/src\commands\word-of-day.js)_

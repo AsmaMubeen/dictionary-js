@@ -13,14 +13,12 @@ class DictCommand extends Command {
     }
   ];
 
-
   async run() {
     const { argv } = this.parse(DictCommand);
 
     let word = argv[0]
 
     let dictionaryService = new DictionaryService();
-
 
     let wordExists = await dictionaryService.wordExists(word)
 
