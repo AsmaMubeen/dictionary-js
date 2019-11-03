@@ -50,9 +50,7 @@
   "repository": "https://github.com/AsmaMubeen/dictionary-js",
   "scripts": {
     "postpack": "rimraf oclif.manifest.json",
-    "posttest": "eslint .",
-    "prepack": "oclif-dev manifest && oclif-dev readme",
-    "test": "echo NO TESTS",
-    "version": "oclif-dev readme && git add README.md"
+    "prepack": "oclif-dev manifest",
+    "test": "echo NO TESTS"
   }
 }
