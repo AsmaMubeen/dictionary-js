@@ -26,13 +26,13 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`dict ant`](#dict-ant)
-* [`dict def`](#dict-def)
-* [`dict dict`](#dict-dict)
-* [`dict ex`](#dict-ex)
+* [`dict ant [WORD]`](#dict-ant)
+* [`dict def [WORD]`](#dict-def)
+* [`dict dict [WORD]`](#dict-dict)
+* [`dict ex [WORD]`](#dict-ex)
 * [`dict help [COMMAND]`](#dict-help-command)
 * [`dict play`](#dict-play)
-* [`dict syn WORD`](#dict-syn-word)
+* [`dict syn [WORD]`](#dict-syn-word)
 
 ## `dict ant`
 
@@ -54,18 +54,14 @@ _See code: [src\commands\ant.js](https://github.com/AsmaMubeen/dictionary-js/blo
 
 ## `dict def`
 
-Describe the command here
+Shows definitions of the given word
 
 ```
 USAGE
-  $ dict def
+  $ dict def WORD
 
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
+ARGUMENTS
+  WORD  A word for which you want the definitions
 ```
 
 _See code: [src\commands\def.js](https://github.com/AsmaMubeen/dictionary-js/blob/v0.0.0/src\commands\def.js)_
