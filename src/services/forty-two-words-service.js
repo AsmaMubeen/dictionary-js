@@ -6,11 +6,11 @@ class FortyTwoWordsService {
         return await this.get(`/words/randomWord`);
     }
 
-    async definitions() {
+    async definitions(word) {
         return await this.get(`/word/${word}/definitions`);
     }
 
-    async examples() {
+    async examples(word) {
         return await this.get(`/word/${word}/examples`);
     }
 
