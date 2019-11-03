@@ -18,7 +18,7 @@ $ npm install -g dictionary-cli-tool
 $ dict COMMAND
 running command...
 $ dict (-v|--version|version)
-dictionary-cli-tool/1.0.4 win32-x64 node-v12.13.0
+dictionary-cli-tool/1.0.5 win32-x64 node-v12.13.0
 $ dict --help [COMMAND]
 USAGE
   $ dict COMMAND
@@ -52,7 +52,7 @@ ARGUMENTS
   WORD  A word for which you want the antonyms
 ```
 
-_See code: [src\commands\ant.js](https://github.com/AsmaMubeen/dictionary-js/blob/v1.0.4/src\commands\ant.js)_
+_See code: [src\commands\ant.js](https://github.com/AsmaMubeen/dictionary-js/blob/v1.0.5/src\commands\ant.js)_
 
 ## `dict def WORD`
 
@@ -66,7 +66,7 @@ ARGUMENTS
   WORD  A word for which you want the definitions
 ```
 
-_See code: [src\commands\def.js](https://github.com/AsmaMubeen/dictionary-js/blob/v1.0.4/src\commands\def.js)_
+_See code: [src\commands\def.js](https://github.com/AsmaMubeen/dictionary-js/blob/v1.0.5/src\commands\def.js)_
 
 ## `dict dict WORD`
 
@@ -80,7 +80,7 @@ ARGUMENTS
   WORD  A word for which you want all the details
 ```
 
-_See code: [src\commands\dict.js](https://github.com/AsmaMubeen/dictionary-js/blob/v1.0.4/src\commands\dict.js)_
+_See code: [src\commands\dict.js](https://github.com/AsmaMubeen/dictionary-js/blob/v1.0.5/src\commands\dict.js)_
 
 ## `dict ex WORD`
 
@@ -94,7 +94,7 @@ ARGUMENTS
   WORD  A word for which you want the examples
 ```
 
-_See code: [src\commands\ex.js](https://github.com/AsmaMubeen/dictionary-js/blob/v1.0.4/src\commands\ex.js)_
+_See code: [src\commands\ex.js](https://github.com/AsmaMubeen/dictionary-js/blob/v1.0.5/src\commands\ex.js)_
 
 ## `dict help [COMMAND]`
 
@@ -122,7 +122,7 @@ USAGE
   $ dict play
 ```
 
-_See code: [src\commands\play.js](https://github.com/AsmaMubeen/dictionary-js/blob/v1.0.4/src\commands\play.js)_
+_See code: [src\commands\play.js](https://github.com/AsmaMubeen/dictionary-js/blob/v1.0.5/src\commands\play.js)_
 
 ## `dict syn WORD`
 
@@ -136,7 +136,7 @@ ARGUMENTS
   WORD  A word for which you want the synonyms
 ```
 
-_See code: [src\commands\syn.js](https://github.com/AsmaMubeen/dictionary-js/blob/v1.0.4/src\commands\syn.js)_
+_See code: [src\commands\syn.js](https://github.com/AsmaMubeen/dictionary-js/blob/v1.0.5/src\commands\syn.js)_
 
 ## `dict word-of-day`
 
@@ -147,5 +147,5 @@ USAGE
   $ dict word-of-day
 ```
 
-_See code: [src\commands\word-of-day.js](https://github.com/AsmaMubeen/dictionary-js/blob/v1.0.4/src\commands\word-of-day.js)_
+_See code: [src\commands\word-of-day.js](https://github.com/AsmaMubeen/dictionary-js/blob/v1.0.5/src\commands\word-of-day.js)_
 <!-- commandsstop -->
