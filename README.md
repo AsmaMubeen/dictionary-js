@@ -26,15 +26,16 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`dict ant [WORD]`](#dict-ant)
-* [`dict def [WORD]`](#dict-def)
-* [`dict dict [WORD]`](#dict-dict)
-* [`dict ex [WORD]`](#dict-ex)
+* [`dict ant WORD`](#dict-ant-word)
+* [`dict def WORD`](#dict-def-word)
+* [`dict dict WORD`](#dict-dict-word)
+* [`dict ex WORD`](#dict-ex-word)
 * [`dict help [COMMAND]`](#dict-help-command)
 * [`dict play`](#dict-play)
-* [`dict syn [WORD]`](#dict-syn-word)
+* [`dict syn WORD`](#dict-syn-word)
+* [`dict word-of-day`](#dict-word-of-day)
 
-## `dict ant`
+## `dict ant WORD`
 
 Shows antonyms of the given word
 
@@ -48,7 +49,7 @@ ARGUMENTS
 
 _See code: [src\commands\ant.js](https://github.com/AsmaMubeen/dictionary-js/blob/v0.0.0/src\commands\ant.js)_
 
-## `dict def`
+## `dict def WORD`
 
 Shows definitions of the given word
 
@@ -62,25 +63,21 @@ ARGUMENTS
 
 _See code: [src\commands\def.js](https://github.com/AsmaMubeen/dictionary-js/blob/v0.0.0/src\commands\def.js)_
 
-## `dict dict`
+## `dict dict WORD`
 
-Describe the command here
+Shows definitions, synonyms, antonyms and examples of the given word
 
 ```
 USAGE
-  $ dict dict
+  $ dict dict WORD
 
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
+ARGUMENTS
+  WORD  A word for which you want the all the details
 ```
 
 _See code: [src\commands\dict.js](https://github.com/AsmaMubeen/dictionary-js/blob/v0.0.0/src\commands\dict.js)_
 
-## `dict ex`
+## `dict ex WORD`
 
 Shows examples of the given word
 
@@ -118,7 +115,6 @@ command to play a word game
 ```
 USAGE
   $ dict play
-
 ```
 
 _See code: [src\commands\play.js](https://github.com/AsmaMubeen/dictionary-js/blob/v0.0.0/src\commands\play.js)_
@@ -136,4 +132,22 @@ ARGUMENTS
 ```
 
 _See code: [src\commands\syn.js](https://github.com/AsmaMubeen/dictionary-js/blob/v0.0.0/src\commands\syn.js)_
+
+## `dict word-of-day`
+
+Describe the command here
+
+```
+USAGE
+  $ dict word-of-day
+
+OPTIONS
+  -n, --name=name  name to print
+
+DESCRIPTION
+  ...
+  Extra documentation goes here
+```
+
+_See code: [src\commands\word-of-day.js](https://github.com/AsmaMubeen/dictionary-js/blob/v0.0.0/src\commands\word-of-day.js)_
 <!-- commandsstop -->

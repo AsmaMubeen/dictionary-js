@@ -1,26 +1,14 @@
-const { Command, flags } = require('@oclif/command')
+const {Command, flags} = require('@oclif/command')
 const DictionaryService = require('../services/dictionary-service')
 const chalk = require('chalk')
 
-class DictCommand extends Command {
-
-  static args = [
-    {
-      name: 'word',
-      required: true,
-      description: 'A word for which you want all the details',
-      hidden: false,
-    }
-  ];
-
-
+class WordOfDayCommand extends Command {
   async run() {
-    const { argv } = this.parse(DictCommand);
+    const { argv } = this.parse(WordOfDayCommand);
 
     let word = argv[0]
-
+    
     let dictionaryService = new DictionaryService();
-
 
     let wordExists = await dictionaryService.wordExists(word)
 
@@ -64,6 +52,13 @@ class DictCommand extends Command {
   }
 }
 
-DictCommand.description = `Shows definitions, synonyms, antonyms and examples of the given word`
+WordOfDayCommand.description = `Describe the command here
+...
+Extra documentation goes here
+`
 
-module.exports = DictCommand
+WordOfDayCommand.flags = {
+  name: flags.string({char: 'n', description: 'name to print'}),
+}
+
+module.exports = WordOfDayCommand

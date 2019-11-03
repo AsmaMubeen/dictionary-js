@@ -1,5 +1,14 @@
 #!/usr/bin/env node
+var commands = ["ant", "def", "dict", "ex", "play", "syn", "word-of-day", "help", "--help"];
+
+if (process.argv.length == 2) {
+    process.argv.push("word-of-day");
+} else if (process.argv.length == 3) {
+    if (!commands.includes(process.argv[2])) {
+        process.argv.splice(2, 0, "dict");
+    }
+}
 
 require('@oclif/command').run()
-.then(require('@oclif/command/flush'))
-.catch(require('@oclif/errors/handle'))
+    .then(require('@oclif/command/flush'))
+    .catch(require('@oclif/errors/handle'))
