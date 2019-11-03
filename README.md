@@ -113,18 +113,12 @@ _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.1
 
 ## `dict play`
 
-Describe the command here
+command to play a word game
 
 ```
 USAGE
   $ dict play
 
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
 ```
 
 _See code: [src\commands\play.js](https://github.com/AsmaMubeen/dictionary-js/blob/v0.0.0/src\commands\play.js)_

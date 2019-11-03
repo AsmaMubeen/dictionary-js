@@ -66,6 +66,17 @@ class DictionaryService {
         }
     }
 
+    async getSynonymsAndAntonyms(word) {
+        let { data: resp } = await this.fortyTwoService.relatedWords(word)
+
+        let synonyms = resp.filter(x => x.relationshipType == 'synonym')[0]
+        let antonyms = resp.filter(x => x.relationshipType == 'antonym')[0]
+        return {
+            synonyms: synonyms ? synonyms.words : [],
+            antonyms: antonyms ? antonyms.words : []
+        }
+    }
+
     async examples(word) {
         let { data: resp } = await this.fortyTwoService.examples(word)
         let regex = /_/gi;
@@ -76,6 +87,11 @@ class DictionaryService {
             let examples = resp.examples.map(x => x.text.replace(regex, ''))
             return examples
         }
+    }
+
+    async randomWord() {
+        let { data: resp } = await this.fortyTwoService.randomWord()
+        return resp.word
     }
 }
 
