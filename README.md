@@ -11,6 +11,8 @@ Command line dictionary tool
 * [Installing through source code](#installing-through-source-code)
 * [Commands](#commands)
 <!-- tocstop -->
+# Requirements
+* [Node.js v12.13.0](https://nodejs.org/en/download/)
 # Usage
 <!-- usage -->
 ```sh-session
